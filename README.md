@@ -6,6 +6,11 @@ A rule-based chatbot I built for the DecodeLabs AI Internship, Project 1 (Rule-B
 
 > Aira doesn't give medical advice and isn't a substitute for one. Anything about medicines, dosage, symptoms, or treatment gets a dedicated response that points the user to book an appointment or call the clinic instead. Anything that sounds like an emergency gets caught before the rest of the message is even looked at.
 
+## Requirements
+
+- Python 3.8 or newer
+- No external packages are needed to run the chatbot (pytest is only needed for the tests)
+
 ## Features
 
 - Runs in a continuous loop until an exit command is typed
@@ -18,31 +23,35 @@ A rule-based chatbot I built for the DecodeLabs AI Internship, Project 1 (Rule-B
 - Greeting replies are randomized so they don't feel repetitive
 - Comes with 23 passing tests written with pytest
 
-## Setup
+## Quick Start
 
 ```bash
-pip install -r requirements.txt
-```
-
-This installs pytest, the only external package the project needs.
-
-## How to Run
-
-```bash
+git clone https://github.com/YOUR-USERNAME/carewell-aira.git
+cd carewell-aira
 python main.py
 ```
 
-Aira asks for your name once at the start, then you can start chatting. Type `bye`, `exit`, `quit`, or `goodbye` whenever you want to leave, or just press Ctrl+C for a clean exit.
+Aira asks for your name once, then you can start chatting. Type `bye`, `exit`, `quit`, or `goodbye` to leave, or press Ctrl+C.
 
-## How to Test
+No installation is needed to run the chatbot itself, because it uses only Python's standard library. You need Python 3 installed.
 
+## Running the Tests (optional)
+
+The tests need pytest. A virtual environment keeps it separate from your other projects:
+
+**Windows**
 ```bash
-python -m pytest
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+python -m pytest -v
 ```
 
-Add `-v` if you want each test listed individually as a pass or fail:
-
+**macOS / Linux**
 ```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
 python -m pytest -v
 ```
 
